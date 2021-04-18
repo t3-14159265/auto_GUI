@@ -13,13 +13,14 @@ from tensorflow.keras import regularizers
 
 ##############4 HEADED MODEL#################################
 class A2Cnet:
-    def __init__(self, input_shape, screen_width, screen_height, model_load_w):
+    def __init__(self, input_shape, screen_width, screen_height, model_load_w, weights_name):
         self.input_shape = input_shape
         self.screen_width = screen_width
         self.screen_height = screen_height
         self.l2_reg = 1e-5
         self.model_load_w = model_load_w
         self.build_model()
+        self.weights_name = weights_name
         
         
     
@@ -40,7 +41,7 @@ class A2Cnet:
         #model
         self.model = keras.Model(inputs=[self.img_inputs], outputs=[self.width_header, self.height_header, self.button_header, self.value_header])
         if self.model_load_w:    
-            self.model.load_weights("ckpt")
+            self.model.load_weights(self.weights_name)
         
     def get_model(self):
         return self.model
@@ -63,4 +64,4 @@ class A2Cnet:
         self.model = model
     
     def save_weights(self):
-        self.model.save_weights("ckpt")
+        self.model.save_weights(self.weights_name)

@@ -26,7 +26,7 @@ def move_prob_selection(width, height, button):
     
     action_probs = [width[wid_choice], height[height_choice], button[but_choice]]
     log_probs = np.log(action_probs)
-    return action, log_probs
+    return action, log_probs, action_probs
 
 
 ###################execute action###############################

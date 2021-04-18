@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['main_gt.py', 'utilities\\utilities.py', 'actions\\actions.py', 'models\\model.py', 'data\\target_imagehash.py', 'data\\rewards.py', 'utilities\\screenshot.py', 'data\\test_data.py']
+recent_files = ['sl\\main_sl.py', 'sl_utilities.py']
 
